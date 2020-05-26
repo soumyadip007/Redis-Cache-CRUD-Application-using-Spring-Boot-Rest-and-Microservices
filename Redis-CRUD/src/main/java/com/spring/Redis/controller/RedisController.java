@@ -39,6 +39,12 @@ public class RedisController {
 	        userRepository.delete(id);
 	        return all();
 	    }
+	    
+	    @GetMapping("/find/{id}")
+	    public User find(@PathVariable("id") final String id) {
+	    	return userRepository.findById(id);
+	        
+	    }
 
 	    @GetMapping("/all")
 	    public Map<String, User> all() {
