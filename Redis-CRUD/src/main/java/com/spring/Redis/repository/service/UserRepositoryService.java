@@ -1,5 +1,5 @@
-package com.spring.Redis.service;
+package com.spring.Redis.repository.service;
 
-public class UserService {
+public class UserRepositoryService {
 
 }
