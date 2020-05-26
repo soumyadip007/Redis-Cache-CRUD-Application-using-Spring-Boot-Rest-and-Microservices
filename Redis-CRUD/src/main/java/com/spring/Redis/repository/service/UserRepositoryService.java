@@ -4,10 +4,12 @@ import java.util.Map;
 
 import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.stereotype.Repository;
 
 import com.spring.Redis.entity.User;
 import com.spring.Redis.repository.UserRepository;
 
+@Repository
 public class UserRepositoryService implements UserRepository {
 
 	
