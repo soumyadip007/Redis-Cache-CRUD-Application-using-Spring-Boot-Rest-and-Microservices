@@ -13,8 +13,8 @@ import com.spring.Redis.entity.User;
 
 @SpringBootApplication
 @EnableAsync
-@ComponentScan({"com.spring.Redis.*"})
-@EntityScan("com.spring.Redis.*")
+@ComponentScan({"com.spring.*"})
+@EntityScan("com.spring.*")
 public class RedisApplication {
 
 	public static void main(String[] args) {
@@ -22,15 +22,16 @@ public class RedisApplication {
 	}
 	
 	@Bean
-	JedisConnectionFactory jedisConnectionFactory(){
+	JedisConnectionFactory jedisConnectionFactory() {
 		return new JedisConnectionFactory();
 	}
-	
+
 	@Bean
-	RedisTemplate<String,User> redisTemplate(){
-		RedisTemplate<String, User> redisTemplate=new RedisTemplate<String,User>();
+	RedisTemplate<String, User> redisTemplate() {
+		RedisTemplate<String, User> redisTemplate = new RedisTemplate<>();
 		redisTemplate.setConnectionFactory(jedisConnectionFactory());
 		return redisTemplate;
-	}
+ 	}
+
 
 }
